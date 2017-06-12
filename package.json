@@ -20,9 +20,13 @@
             "title": "Hello World"
         }]
     },
-    "galleryBanner":{
+    "galleryBanner": {
         "color": "#0000FF",
         "theme": "dark"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dainash/ivue.git"
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
