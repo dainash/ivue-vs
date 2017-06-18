@@ -5,5 +5,4 @@ test/**
 jsconfig.json
 vsc-extension-quickstart.md
 .eslintrc.json
-node_modules
 .DS_Store
