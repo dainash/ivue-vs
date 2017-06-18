@@ -1,0 +1,9 @@
+{
+    "vue template init": {
+        "prefix": "V",
+        "body": [
+            "<template>\n</template>\n\n<script>\nexport default {\n\tname: '${id:name}'\n\n}\n</script>\n\n<style scoped>\n\n</style>"
+        ],
+        "description": "Quickly generate vue component templates"
+    }
+}

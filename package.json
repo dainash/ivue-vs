@@ -1,43 +1,86 @@
 {
-    "name": "ivue",
-    "displayName": "ivue",
-    "description": "a vue and iview extension",
-    "version": "0.0.2",
-    "publisher": "daixiangyu13",
-    "engines": {
-        "vscode": "^1.12.0"
-    },
-    "categories": [
-        "Other"
+  "name": "ivue",
+  "displayName": "ivue",
+  "description": "a vue and iview extension",
+  "version": "0.0.3",
+  "publisher": "daixiangyu13",
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.12.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:vue",
+    "onCommand:ivue.format"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "languages": [
+      {
+        "id": "vue",
+        "extensions": [
+          ".vue"
+        ],
+        "configuration": "./conf/configuration.json"
+      }
     ],
-    "activationEvents": [
-        "onCommand:extension.sayHello"
+    "grammars": [
+      {
+        "language": "vue",
+        "scopeName": "text.html.vue",
+        "path": "./syntaxes/vue.tmLanguage.json"
+      }
     ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
-    },
-    "galleryBanner": {
-        "color": "#0000FF",
-        "theme": "dark"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dainash/ivue.git"
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "eslint": "^3.6.0",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+    "snippets": [
+      {
+        "language": "vue",
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/iview.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ivue.format",
+        "title": "vue beautify"
+      }
+    ],
+    "menus": {
+        "editor/context": [
+            {
+                "when": "editorLangId == vue",
+                "command": "ivue.format",
+                "group": "1_modification"
+            }
+        ]
     }
+  },
+  "galleryBanner": {
+    "color": "#0000FF",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dainash/ivue.git"
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "eslint": "^3.6.0",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "dependencies": {
+    "js-beautify": "^1.6.14",
+    "pug-beautify": "^0.1.1"
+  }
 }

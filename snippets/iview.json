@@ -1,0 +1,72 @@
+{
+    "ivew row": {
+        "prefix": "Row",
+        "body": [
+            "<Row>\n\t$1\n</Row>"
+        ],
+        "description": "Quickly generate iview row"
+    },
+    "ivew col": {
+        "prefix": "Col",
+        "body": [
+            "<Col span=\"$1\">\n\t$2\n</Col>"
+        ],
+        "description": "Quickly generate iview span"
+    },
+    "ivew button": {
+        "prefix": "Button",
+        "body": [
+            "<Button type=\"${1:primary}\">$2</Button>"
+        ],
+        "description": "Quickly generate iview button"
+    },
+    "ivew input": {
+        "prefix": "Input",
+        "body": [
+            "<Input v-model=\"${1}\" placeholder=\"${2}\"></Input>"
+        ],
+        "description": "Quickly generate iview input"
+    },
+    "ivew input number": {
+        "prefix": "Inputnumber",
+        "body": [
+            "<Input-number :max=\"${1:10}\" :min=\"${2:1}\" v-model=\"${3:model}\"></Input-number>"
+        ],
+        "description": "Quickly generate iview input number"
+    },
+    "ivew table": {
+        "prefix": "Table",
+        "body": [
+            "<Table :columns=\"${1:column}\" :data=\"${2:data}\"></Table>"
+        ],
+        "description": "Quickly generate iview table"
+    },
+    "ivew select": {
+        "prefix": "Select",
+        "body": [
+            "<Select v-model=\"${1:model}\">\n\t<Option v-for=\"${2:item} in ${3:list}\" :value=\"${4:value}\" :key=\"item\">${5}</Option>\n</Select>"
+        ],
+        "description": "Quickly generate iview select"
+    },
+    "ivew datetime picker": {
+        "prefix": "Datepicker",
+        "body": [
+            "<Date-picker type=\"datetime\" format=\"yyyy/MM/dd HH:mm\" placeholder=\"选择日期和时间\"></Date-picker>"
+        ],
+        "description": "Quickly generate iview datetime picker"
+    },
+    "ivew upload": {
+        "prefix": "Upload",
+        "body": [
+            "<Upload action=\"${1}\">\n\t<Button type=\"ghost\" icon=\"ios-cloud-upload-outline\">上传文件</Button>\n</Upload>"
+        ],
+        "description": "Quickly generate iview upload"
+    },
+    "ivew message": {
+        "prefix": "Message",
+        "body": [
+           "this.$$Message.info('${1}');"
+        ],
+        "description": "Quickly generate iview message"
+    }
+}
