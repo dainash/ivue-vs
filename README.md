@@ -22,9 +22,9 @@ ext install ivue
 
 |  shortcut   | Content                                  |
 | :---------: | :--------------------------------------- |
-|      V      | <template></template><script><script><style></style> |
+|      V      |  \<template \> \</template \><script><script><style></style> |
 |    func     | function(){}                             |
-|     Row     | <Row></Row>                              |
+|     Row     |  \<Row \> \</Row \>                              |
 |     Col     | <Col span=""></Col>                      |
 |   Button    | <Button type="primary"></Button>         |
 |    Input    | <Input v-model="" placeholder=""></Input> |
