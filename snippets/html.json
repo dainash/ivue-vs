@@ -1,9 +1,9 @@
 {
-    "vue template init": {
-        "prefix": "V",
+    "function init": {
+        "prefix": "function",
         "body": [
-            "<template>\n</template>\n\n<script>\nexport default {\n\tname: '${id:name}'\n\n}\n</script>\n\n<style scoped>\n\n</style>"
+            "function ${1}() {\n\t${2}\n}"
         ],
-        "description": "Quickly generate vue component templates"
+        "description": "Quickly generate functions"
     }
 }

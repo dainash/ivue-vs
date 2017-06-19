@@ -1,21 +1,13 @@
 var beautify = require('js-beautify');
-var pugBeautify = require('pug-beautify');
 
 /**
  * beautify html/js/css
  * @param {string} text the source code
  * @param {boolean} [isTabIndent=false] indent with tab? default: false
- * @param {number} [indentSize=2] indent size, default: 2
+ * @param {number} [indentSize=4] indent size, default: 4
  * @return {string} beautify the code
  */
-module.exports = function (text, isTabIndent, indentSize, isRootIndent) {
-
-  if (isTabIndent === undefined) {
-    isTabIndent = false;
-  }
-  if (indentSize === undefined) {
-    indentSize = 2;
-  }
+module.exports = function (text, isTabIndent = false, indentSize = 4) {
 
   // options
   var options = {
@@ -23,24 +15,15 @@ module.exports = function (text, isTabIndent, indentSize, isRootIndent) {
     isTabIndent: isTabIndent
   }
 
-  // find template 
+  // find template
   text = text.replace(/([ \t]*<template[\s\S]*?>)([\s\S]*?)([ \t]*<\/template>[ \t]*)/g, function (match, tagStart, code, tagEnd) {
     tagStart = beautifyTagStart(tagStart);
     tagEnd = beautifyTagEnd(tagEnd);
     var lang = getLang(tagStart);
     lang = lang ? lang.toLowerCase() : 'html';
 
-    if (lang === 'pug' || lang === 'jade') {
-      return tagStart + code + tagEnd;
-    }
-
     // beautify code
     code = beautifyHtml(code, options);
-
-    // is root tag indent
-    if (isRootIndent) {
-      code = rootTagIndent(code, options);
-    }
 
     return tagStart + '\n' + code + '\n' + tagEnd;
   });
@@ -52,11 +35,6 @@ module.exports = function (text, isTabIndent, indentSize, isRootIndent) {
 
     // beautify code
     code = beautifyJs(code, options);
-
-    // is root tag indent
-    if (isRootIndent) {
-      code = rootTagIndent(code, options);
-    }
 
     return tagStart + '\n' + code + '\n' + tagEnd;
 
@@ -76,11 +54,6 @@ module.exports = function (text, isTabIndent, indentSize, isRootIndent) {
 
     // beautify code
     code = beautifyCss(code, options);
-
-    // is root tag indent
-    if (isRootIndent) {
-      code = rootTagIndent(code, options);
-    }
 
     return tagStart + '\n' + code + '\n' + tagEnd;
   });
@@ -130,19 +103,6 @@ function beautifyHtml(str, options) {
     indent_size: options.indentSize,
     indent_with_tabs: options.isTabIndent
   });
-
-}
-
-// beautify template
-function beautifyPug(str, options) {
-  try {
-    str = pugBeautify(str, {
-      fill_tab: options.isTabIndent,
-      omit_div: false,
-      tab_size: options.indentSize
-    });
-  } catch (e) { }
-  return str;
 
 }
 
