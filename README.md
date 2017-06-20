@@ -6,7 +6,7 @@
 
 ### features
 
-- Code completion
+- Code highlight
 - Vue file beautify
 - snippets
 - Auto closing pairs
