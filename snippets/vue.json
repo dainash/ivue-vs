@@ -2,7 +2,7 @@
     "vue template init": {
         "prefix": "V",
         "body": [
-            "<template>\n\n</template>\n\n<script>\nexport default {\n\tname: '${1:name}',\n\tdata: function() {\t\n\t\treturn {}\n\t},\n\tmethods: {}\n</script>\n\n<style scoped>\n\n</style>"
+            "<template>\n\n</template>\n\n<script>\nexport default {\n\tname: '${1:name}',\n\tdata: function() {\t\n\t\treturn {}\n\t},\n\tmethods: {}\n}\n</script>\n\n<style scoped>\n\n</style>"
         ],
         "description": "Quickly generate vue component templates"
     }
